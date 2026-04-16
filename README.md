@@ -5,7 +5,7 @@ A full-stack employee management system built with **React**, **Node.js**, **Exp
 ## 🚀 Features
 
 - **Full CRUD Operations**: Add, view, update, and delete employee records.
-- **Dynamic Search**: Instantly filter employees by name, role, or department.
+- **Search**: Instantly filter employees by name, role, or department.
 - **Department Categorization**: Visual badges with dynamic color coding for different departments.
 - **Responsive Design**: Fully responsive UI built with Tailwind CSS, optimized for mobile, tablet, and desktop.
 - **In-Memory Backend**: A RESTful API built with Express to manage employee data (volatile storage).
@@ -33,14 +33,14 @@ A full-stack employee management system built with **React**, **Node.js**, **Exp
 ```text
 .
 ├── Backend/
-│   ├── controllers/      # Route controllers (CRUD logic)
+│   ├── controllers/      # Route controllers 
 │   ├── routes/           # API route definitions
 │   ├── server.js         # Entry point for the Node server
 │   └── package.json      # Backend dependencies and scripts
 │
-└── Frontend/             # Modern React application
+└── Frontend/             # React APP
     ├── src/
-    │   ├── components/   # Reusable UI components (Forms, Cards, etc.)
+    │   ├── components/   # Reusable UI components 
     │   ├── pages/        # Main page views
     │   ├── services/     # API interaction layer
     │   ├── utils/        # Formatting and validation helpers
@@ -60,21 +60,16 @@ A full-stack employee management system built with **React**, **Node.js**, **Exp
 
 ### Installation
 
-1. **Clone the repository**:
 
-   ```bash
-   git clone <repository-url>
-   cd <project-folder>
-   ```
 
-2. **Setup the Backend**:
+1. **Setup the Backend**:
 
    ```bash
    cd Backend
    npm install
    ```
 
-3. **Setup the Frontend**:
+2. **Setup the Frontend**:
    ```bash
    cd ../Frontend
    npm install
@@ -101,7 +96,7 @@ From the `Frontend` directory:
 
 ```bash
 npm run dev
-# Application will run at http://localhost:5173 (usually)
+# Application will run at http://localhost:5173 
 ```
 
 ---
@@ -119,6 +114,3 @@ The backend exposes the following RESTful endpoints under the `/api` prefix:
 
 ---
 
-## 📝 License
-
-This project is licensed under the MIT License.
