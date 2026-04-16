@@ -33,14 +33,14 @@ A full-stack employee management system built with **React**, **Node.js**, **Exp
 ```text
 .
 ├── Backend/
-│   ├── controllers/      # Route controllers 
+│   ├── controllers/      # Route controllers
 │   ├── routes/           # API route definitions
 │   ├── server.js         # Entry point for the Node server
 │   └── package.json      # Backend dependencies and scripts
 │
 └── Frontend/             # React APP
     ├── src/
-    │   ├── components/   # Reusable UI components 
+    │   ├── components/   # Reusable UI components
     │   ├── pages/        # Main page views
     │   ├── services/     # API interaction layer
     │   ├── utils/        # Formatting and validation helpers
@@ -59,8 +59,6 @@ A full-stack employee management system built with **React**, **Node.js**, **Exp
 - [npm](https://www.npmjs.com/) (installed with Node.js)
 
 ### Installation
-
-
 
 1. **Setup the Backend**:
 
@@ -96,7 +94,7 @@ From the `Frontend` directory:
 
 ```bash
 npm run dev
-# Application will run at http://localhost:5173 
+# Application will run at http://localhost:5173
 ```
 
 ---
@@ -114,3 +112,14 @@ The backend exposes the following RESTful endpoints under the `/api` prefix:
 
 ---
 
+## 📸 Screenshots
+
+### Dashboard View
+
+![Dashboard View](./Screenshots/Dashboard_Image.png)
+
+### Add/Edit Employee Form
+
+![Edit Employee Form](./Screenshots/Edit_Emloyee.png)
+
+---
