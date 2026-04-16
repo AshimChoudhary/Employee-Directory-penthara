@@ -19,7 +19,7 @@ const EmployeeForm = ({ employee, onSubmit, onDelete, onClose }) => {
     setErrors((prev) => ({ ...prev, [e.target.name]: "" }));
   };
 
-  // Validates all required fields before triggering API calls
+  // Checks all required fields before triggering API calls
   const validate = () => {
     const newErrors = {};
     if (!form.name.trim()) newErrors.name = "Name is required";
@@ -68,6 +68,8 @@ const EmployeeForm = ({ employee, onSubmit, onDelete, onClose }) => {
                 {isEditing ? "Edit Employee" : "Add New Employee"}
               </h3>
 
+              {/* Label and input for - Name of the Employee */}
+
               <div className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700">
@@ -84,6 +86,7 @@ const EmployeeForm = ({ employee, onSubmit, onDelete, onClose }) => {
                     <p className="text-red-500 text-xs mt-1">{errors.name}</p>
                   )}
                 </div>
+                {/* Label and input for - Role / Position of the Employee */}
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700">
@@ -100,6 +103,7 @@ const EmployeeForm = ({ employee, onSubmit, onDelete, onClose }) => {
                     <p className="text-red-500 text-xs mt-1">{errors.role}</p>
                   )}
                 </div>
+                {/* Label and input for - Department of the Employee */}
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700">
@@ -111,6 +115,7 @@ const EmployeeForm = ({ employee, onSubmit, onDelete, onClose }) => {
                     onChange={handleChange}
                     className={`mt-1 block w-full border ${errors.department ? "border-red-500" : "border-gray-300"} rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm`}
                   >
+                    {/* Dropdown to select the department */}
                     <option value="">Select a department</option>
                     <option value="Engineering">Engineering</option>
                     <option value="Product">Product</option>

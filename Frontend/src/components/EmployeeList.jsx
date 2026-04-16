@@ -1,7 +1,6 @@
 import EmployeeCard from "./EmployeeCard";
 
 const EmployeeList = ({ employees, loading, error, onEdit }) => {
-  // Skeleton-like loading state for better UX
   if (loading) {
     return (
       <div className="flex justify-center items-center py-20">
@@ -10,7 +9,7 @@ const EmployeeList = ({ employees, loading, error, onEdit }) => {
     );
   }
 
-  // Graceful error handling for failed API requests
+  // Error if failed to load API
   if (error) {
     return (
       <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-center my-10">

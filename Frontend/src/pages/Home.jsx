@@ -33,6 +33,9 @@ const Home = () => {
       setEmployees(data);
     } catch (err) {
       console.error("Fetch error:", err);
+
+      // Application will show below prompt if failed to fetch data from backend
+
       setError(
         "Failed to load employees. Make sure the backend is running.....",
       );
@@ -41,7 +44,7 @@ const Home = () => {
     }
   };
 
-  // Simple ephemeral notification system
+  // Simple Notification system via React-Toast
   const showToast = (message) => {
     setToast(message);
     setTimeout(() => setToast(""), 3000);
