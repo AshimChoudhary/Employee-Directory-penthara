@@ -2,7 +2,7 @@
 
 A full-stack employee management system built with **React**, **Node.js**, **Express**, and **Tailwind CSS**. This application allows users to manage a directory of employees with full CRUD (Create, Read, Update, Delete) functionality and real-time client-side filtering.
 
-## 🚀 Features
+## Features
 
 - **Full CRUD Operations**: Add, view, update, and delete employee records.
 - **Search**: Instantly filter employees by name, role, or department.
@@ -10,7 +10,7 @@ A full-stack employee management system built with **React**, **Node.js**, **Exp
 - **Responsive Design**: Fully responsive UI built with Tailwind CSS, optimized for mobile, tablet, and desktop.
 - **In-Memory Backend**: A RESTful API built with Express to manage employee data (volatile storage).
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 ### Frontend
 
@@ -28,7 +28,7 @@ A full-stack employee management system built with **React**, **Node.js**, **Exp
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 .
@@ -51,7 +51,7 @@ A full-stack employee management system built with **React**, **Node.js**, **Exp
 
 ---
 
-## ⚙️ Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -77,7 +77,7 @@ A full-stack employee management system built with **React**, **Node.js**, **Exp
 
 ---
 
-## 🏃 Running the Application
+## Running the Application
 
 To run the application, you need to start **both** the backend server and the frontend development server.
 
@@ -101,7 +101,7 @@ npm run dev
 
 ---
 
-## 🔌 API Endpoints
+## API Endpoints
 
 The backend exposes the following RESTful endpoints under the `/api` prefix:
 
