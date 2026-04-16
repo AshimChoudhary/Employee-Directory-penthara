@@ -1,12 +1,7 @@
-/**
- * Search Bar component to filter employees by name, role or department.
- * @param {Object} props - Component props
- * @param {string} props.query - Current search string
- * @param {Function} props.onSearch - Callback function to update search string
- */
 const SearchBar = ({ query, onSearch }) => {
   return (
     <div className="relative w-full">
+      {/* Icon visual hint for search input */}
       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
         <svg
           className="h-5 w-5 text-gray-400"
@@ -22,6 +17,7 @@ const SearchBar = ({ query, onSearch }) => {
           />
         </svg>
       </div>
+      {/* Controlled input that triggers updates on every keystroke */}
       <input
         type="text"
         value={query}

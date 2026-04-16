@@ -8,6 +8,7 @@ const EmployeeForm = ({ employee, onSubmit, onDelete, onClose }) => {
   const [errors, setErrors] = useState({});
   const [submitting, setSubmitting] = useState(false);
 
+  // Synchronizes local form state with incoming 'employee' prop for edit scenarios
   useEffect(() => {
     setForm(isEditing ? employee : emptyForm);
     setErrors({});
@@ -18,6 +19,7 @@ const EmployeeForm = ({ employee, onSubmit, onDelete, onClose }) => {
     setErrors((prev) => ({ ...prev, [e.target.name]: "" }));
   };
 
+  // Validates all required fields before triggering API calls
   const validate = () => {
     const newErrors = {};
     if (!form.name.trim()) newErrors.name = "Name is required";

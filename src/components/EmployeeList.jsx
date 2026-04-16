@@ -1,15 +1,7 @@
 import EmployeeCard from "./EmployeeCard";
 
-/**
- * Component to display the list of all employees.
- * @param {Object} props - Component props
- * @param {Array} props.employees - List of employees to display
- * @param {boolean} props.loading - Loading state of the employee data
- * @param {string} props.error - Error message if fetch fails
- * @param {Function} props.onEdit - Callback function when an employee is edited
- */
 const EmployeeList = ({ employees, loading, error, onEdit }) => {
-  // Show loading indicator
+  // Skeleton-like loading state for better UX
   if (loading) {
     return (
       <div className="flex justify-center items-center py-20">
@@ -18,7 +10,7 @@ const EmployeeList = ({ employees, loading, error, onEdit }) => {
     );
   }
 
-  // Show error message
+  // Graceful error handling for failed API requests
   if (error) {
     return (
       <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-center my-10">
@@ -27,7 +19,7 @@ const EmployeeList = ({ employees, loading, error, onEdit }) => {
     );
   }
 
-  // Show message if no employees found
+  // Empty state handling when no search results match or data is missing
   if (employees.length === 0) {
     return (
       <div className="text-center py-20 text-gray-500">No employees found.</div>
@@ -36,6 +28,7 @@ const EmployeeList = ({ employees, loading, error, onEdit }) => {
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      {/* Render individual cards for each employee in the dataset */}
       {employees.map((emp) => (
         <EmployeeCard key={emp.id} employee={emp} onEdit={onEdit} />
       ))}

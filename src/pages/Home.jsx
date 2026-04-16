@@ -10,6 +10,7 @@ import {
 } from "../services/employeeService";
 
 const Home = () => {
+  // State management for employee data and UI transitions
   const [employees, setEmployees] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(true);
@@ -18,10 +19,12 @@ const Home = () => {
   const [showForm, setShowForm] = useState(false);
   const [toast, setToast] = useState("");
 
+  // Initial data fetch on component mount
   useEffect(() => {
     loadEmployees();
   }, []);
 
+  // Retrieves employee list from the backend API
   const loadEmployees = async () => {
     try {
       setLoading(true);
@@ -30,27 +33,31 @@ const Home = () => {
       setEmployees(data);
     } catch (err) {
       console.error("Fetch error:", err);
-      setError("Failed to load employees. Is the backend running?");
+      setError(
+        "Failed to load employees. Make sure the backend is running.....",
+      );
     } finally {
       setLoading(false);
     }
   };
 
+  // Simple ephemeral notification system
   const showToast = (message) => {
     setToast(message);
     setTimeout(() => setToast(""), 3000);
   };
 
+  // Handles both Create and Update operations based on whether an employee is selected
   const handleSubmit = async (formData) => {
     try {
       if (selectedEmployee) {
         const { data } = await updateEmployee(selectedEmployee.id, formData);
         setEmployees((prev) => prev.map((e) => (e.id === data.id ? data : e)));
-        showToast("Employee updated successfully!");
+        showToast("Employee updated");
       } else {
         const { data } = await createEmployee(formData);
         setEmployees((prev) => [...prev, data]);
-        showToast("Employee added successfully!");
+        showToast("Employee added successfully");
       }
       closeForm();
     } catch (err) {
@@ -59,14 +66,15 @@ const Home = () => {
     }
   };
 
+  // Deletion logic with native confirmation prompt
   const handleDelete = async (id) => {
-    if (!window.confirm("Are you sure you want to delete this employee?"))
+    if (!window.confirm("Are you sure you want to delete this employee data?"))
       return;
 
     try {
       await deleteEmployee(id);
       setEmployees((prev) => prev.filter((e) => e.id !== id));
-      showToast("Employee deleted successfully!");
+      showToast("Employee deleted successfully");
       closeForm();
     } catch (err) {
       console.error("Delete error:", err.response?.data || err.message);
@@ -89,6 +97,7 @@ const Home = () => {
     setSelectedEmployee(null);
   };
 
+  // Real-time client-side filtering based on search query
   const filteredEmployees = employees.filter((emp) => {
     const q = searchQuery.toLowerCase();
     return (

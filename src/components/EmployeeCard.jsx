@@ -7,6 +7,7 @@ const departmentColors = {
   Finance: "bg-cyan-100 text-cyan-700",
 };
 
+// Generates two initials from a name to display as an avatar fallback
 const getInitials = (name) =>
   name
     .split(" ")
@@ -15,22 +16,17 @@ const getInitials = (name) =>
     .join("")
     .toUpperCase();
 
-/**
- * Component to display individual employee details in a card format.
- * @param {Object} props - Component props
- * @param {Object} props.employee - Individual employee data
- * @param {Function} props.onEdit - Function to handle edit button click
- */
 const EmployeeCard = ({ employee, onEdit }) => {
   const { name, role, department } = employee;
 
-  // Dynamic coloring based on department
+  // Applies a consistent color scheme based on the employee's department
   const badgeColor =
     departmentColors[department] || "bg-gray-100 text-gray-700";
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-5 flex flex-col gap-4 hover:shadow-md transition-shadow">
       <div className="flex items-center gap-4">
+        {/* Placeholder avatar with initials */}
         <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-lg shrink-0">
           {getInitials(name)}
         </div>
